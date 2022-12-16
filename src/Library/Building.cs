@@ -6,6 +6,7 @@
 
 using System;
 using System.Collections;
+using System.Collections.Generic;
 
 
 namespace Full_GRASP_And_SOLID.Library
@@ -34,10 +35,12 @@ namespace Full_GRASP_And_SOLID.Library
         /// <summary>
         /// Método que agrega una tarea a la lista de tareas.
         /// </summary>
-        public void AddTask(Task task)
+        public void AddTask(Supply material, double quantity, Tool equipment, int time)
         {
+            Task task = new Task(material, quantity, equipment, time);
             this.tasks.Add(task);
         }
+        
 
         /// <summary>
         /// Método que remueve una tarea de la lista de tareas.
@@ -52,23 +55,15 @@ namespace Full_GRASP_And_SOLID.Library
         /// </summary>
         public string PrintBuilding()
         {
-            // no imprime solo retorna lo que se imprime
-            string building = $"Edificio {this.Description}:\n";
-            foreach (Task task in this.tasks)
+            List<string> Buildings = new List<string>();
+            Buildings.Add($"Edificio {this.Description}:");
+            foreach (Task i in this.tasks)
             {
-                building += $"{task.Quantity} de '{task.Material.Description}' " +
-                    $"usando '{task.Equipment.Description}' durante {task.Time}\n";
+                Buildings.Add($"{i.Quantity} de '{i.Material.Description}' " +
+                    $"usando '{i.Equipment.Description}' durante {i.Time}");
             }
-            building += $"Costo de producción total: {this.GetProductionCost()}";
-            return building;
-
-            /* Console.WriteLine($"Edificio {this.Description}:");
-            foreach (Task task in this.tasks)
-            {
-                Console.WriteLine($"{task.Quantity} de '{task.Material.Description}' " +
-                    $"usando '{task.Equipment.Description}' durante {task.Time}");
-            }
-            Console.WriteLine($"Costo de producción total: {this.GetProductionCost()}"); // Agregamos el cálculo del costo de producción en un método. */
+            Buildings.Add($"Cuesta un total de: ${this.GetProductionCost()}");
+            return String.Join("\n", Buildings.ToArray());
         }
  
         /// <summary>

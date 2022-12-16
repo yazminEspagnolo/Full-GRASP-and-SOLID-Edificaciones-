@@ -45,7 +45,7 @@
             Propiedad Description de la clase Building.
             </summary>
         </member>
-        <member name="M:Full_GRASP_And_SOLID.Library.Building.AddTask(Full_GRASP_And_SOLID.Library.Task)">
+        <member name="M:Full_GRASP_And_SOLID.Library.Building.AddTask(Full_GRASP_And_SOLID.Library.Supply,System.Double,Full_GRASP_And_SOLID.Library.Tool,System.Int32)">
             <summary>
             Método que agrega una tarea a la lista de tareas.
             </summary>

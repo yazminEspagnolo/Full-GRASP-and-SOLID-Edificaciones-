@@ -55,20 +55,19 @@ namespace Tests
         [Test]
         public void ConsolePrinterTest()
         {
-            
-            Building tower = new Building("Tower");
             PopulateCatalogs();
-            tower.AddTask(new Task(GetProduct("Cemento"), 100, GetEquipment("Hormigonera"), 120));
-            tower.AddTask(new Task(GetProduct("Arena"), 200, GetEquipment("Hormigonera"), 120));
-            tower.AddTask(new Task(GetProduct("Tabla"), 50, GetEquipment("Martillo"), 15));
-            ConsolePrinter consolePrinter = new ConsolePrinter();
-            FilePrinter filePrinter = new FilePrinter();
-            
-            List<IPrinter> printers = new List<IPrinter>();
-            printers.Add(consolePrinter);
-            printers.Add(filePrinter);
+            IPrinter consolePrinter = new ConsolePrinter();
+            Building tower = new Building("Tower");
+            tower.AddTask(GetProduct("Cemento"), 100, GetEquipment("Hormigonera"), 120);
+            tower.AddTask(GetProduct("Arena"), 200, GetEquipment("Hormigonera"), 120);
+            tower.AddTask(GetProduct("Tabla"), 50, GetEquipment("Martillo"), 15);
+            consolePrinter.PrintBuilding(tower);
             string textoImpreso = tower.PrintBuilding();
-            Assert.AreEqual(printers, textoImpreso);
+            Assert.AreEqual("Edificio Tower:\n"                                     +
+                            "100 de 'Cemento' usando 'Hormigonera' durante 120\n"   +
+                            "200 de 'Arena' usando 'Hormigonera' durante 120\n"     +
+                            "50 de 'Tabla' usando 'Martillo' durante 15\n"          +
+                            "Cuesta un total de: $335000", textoImpreso);
         }
         /// <summary>
         /// Se testea si lanza una excepción al estar la lista de tareas vacía
