@@ -62,13 +62,6 @@ namespace Full_GRASP_And_SOLID.Library
             building += $"Costo de producción total: {this.GetProductionCost()}";
             return building;
 
-            /* Console.WriteLine($"Edificio {this.Description}:");
-            foreach (Task task in this.tasks)
-            {
-                Console.WriteLine($"{task.Quantity} de '{task.Material.Description}' " +
-                    $"usando '{task.Equipment.Description}' durante {task.Time}");
-            }
-            Console.WriteLine($"Costo de producción total: {this.GetProductionCost()}"); // Agregamos el cálculo del costo de producción en un método. */
         }
  
         /// <summary>
