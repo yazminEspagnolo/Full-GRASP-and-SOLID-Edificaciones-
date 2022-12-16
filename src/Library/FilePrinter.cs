@@ -18,4 +18,5 @@ namespace Full_GRASP_And_SOLID.Library
             File.WriteAllText("Building.txt", building.PrintBuilding());
         }
     }
+    // Se utiliza el patrón Polimorfismo para que la clase ConsolePrinter y FilePrinter implementen la interfaz IPrinter.
 }
