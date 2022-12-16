@@ -8,15 +8,23 @@ using System;
 using System.Collections;
 using System.Linq;
 using Full_GRASP_And_SOLID.Library;
+using System.Collections.Generic;
 
 namespace Full_GRASP_And_SOLID
 {
+    /// <summary>
+    /// Programa principal.
+    /// </summary>
     public class Program
     {
         private static ArrayList supplyCatalog = new ArrayList();
 
         private static ArrayList toolCatalog = new ArrayList();
 
+        /// <summary>
+        /// Este método agrega un producto al catálogo.
+        /// </summary>
+        /// <param name="args"></param>
         public static void Main(string[] args)
         {
             PopulateCatalogs();
@@ -25,7 +33,18 @@ namespace Full_GRASP_And_SOLID
             tower.AddTask(new Task(GetProduct("Cemento"), 100, GetEquipment("Hormigonera"), 120));
             tower.AddTask(new Task(GetProduct("Arena"), 200, GetEquipment("Hormigonera"), 120));
             tower.AddTask(new Task(GetProduct("Tabla"), 50, GetEquipment("Martillo"), 15));
-            ConsolePrinter.PrintBuilding(tower); // Agregamos la impresión del edificio.
+            
+            ConsolePrinter consolePrinter = new ConsolePrinter();
+            FilePrinter filePrinter = new FilePrinter();
+
+            List<IPrinter> printers = new List<IPrinter>();
+            printers.Add(consolePrinter);
+            printers.Add(filePrinter);
+
+            foreach (IPrinter printer in printers)
+            {
+                printer.PrintBuilding(tower);
+            }
         }
 
         private static void PopulateCatalogs()
@@ -69,10 +88,8 @@ namespace Full_GRASP_And_SOLID
             var query = from Tool equipment in toolCatalog where equipment.Description == description select equipment;
             return query.FirstOrDefault();
         }
-        
 
+    
         
-        
-
     }
 }

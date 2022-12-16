@@ -4,5 +4,183 @@
         <name>Library</name>
     </assembly>
     <members>
+        <member name="T:Full_GRASP_And_SOLID.Library.Destination">
+            <summary>
+            Esta clase hace de intermediario entre la clase Building y la clase ConsolePrinter.
+            </summary>
+        </member>
+        <member name="F:Full_GRASP_And_SOLID.Library.Destination.Console">
+            <summary>
+            Constante que representa la impresión en consola.
+            </summary>
+        </member>
+        <member name="F:Full_GRASP_And_SOLID.Library.Destination.File">
+            <summary>
+            Constante que representa la impresión en un archivo.
+            </summary>
+        </member>
+        <member name="T:Full_GRASP_And_SOLID.Library.AllInOnePrinter">
+            <summary>
+            Esta clase se encarga de imprimir un edificio.
+            </summary>
+        </member>
+        <member name="M:Full_GRASP_And_SOLID.Library.AllInOnePrinter.PrintRecipe(Full_GRASP_And_SOLID.Library.Building,Full_GRASP_And_SOLID.Library.Destination)">
+            <summary>
+            Este método imprime un edificio.
+            </summary>
+        </member>
+        <member name="T:Full_GRASP_And_SOLID.Library.Building">
+            <summary>
+            Clase que representa un edificio.
+            </summary>
+        </member>
+        <member name="M:Full_GRASP_And_SOLID.Library.Building.#ctor(System.String)">
+            <summary>
+            Constructor de la clase Building.
+            </summary>
+            <param name="name"></param>
+        </member>
+        <member name="P:Full_GRASP_And_SOLID.Library.Building.Description">
+            <summary>  
+            Propiedad Description de la clase Building.
+            </summary>
+        </member>
+        <member name="M:Full_GRASP_And_SOLID.Library.Building.AddTask(Full_GRASP_And_SOLID.Library.Task)">
+            <summary>
+            Método que agrega una tarea a la lista de tareas.
+            </summary>
+        </member>
+        <member name="M:Full_GRASP_And_SOLID.Library.Building.RemoveTask(Full_GRASP_And_SOLID.Library.Task)">
+            <summary>
+            Método que remueve una tarea de la lista de tareas.
+            </summary>
+        </member>
+        <member name="M:Full_GRASP_And_SOLID.Library.Building.PrintBuilding">
+            <summary>
+            Método que da los pasos para imprimir un edificio.
+            </summary>
+        </member>
+        <member name="M:Full_GRASP_And_SOLID.Library.Building.GetProductionCost">
+            <summary>
+            Método que calcula el costo de producción de un edificio.
+            </summary>
+        </member>
+        <member name="T:Full_GRASP_And_SOLID.Library.ConsolePrinter">
+            <summary>
+            Clase que representa la impresión en consola.
+            </summary>
+        </member>
+        <member name="M:Full_GRASP_And_SOLID.Library.ConsolePrinter.PrintBuilding(Full_GRASP_And_SOLID.Library.Building)">
+            <summary>
+            Este método imprime un edificio en consola.
+            </summary>
+            <param name="building"></param>
+        </member>
+        <member name="T:Full_GRASP_And_SOLID.Library.FilePrinter">
+            <summary>
+            Clase que representa la impresión en consola.
+            </summary>
+        </member>
+        <member name="M:Full_GRASP_And_SOLID.Library.FilePrinter.PrintBuilding(Full_GRASP_And_SOLID.Library.Building)">
+            <summary>
+            Este método imprime un edificio en archivo.
+            </summary>
+        </member>
+        <member name="T:Full_GRASP_And_SOLID.Library.IPrinter">
+            <summary>
+            Esta interfaz se encarga de imprimir un edificio.
+            </summary>
+        </member>
+        <member name="M:Full_GRASP_And_SOLID.Library.IPrinter.PrintBuilding(Full_GRASP_And_SOLID.Library.Building)">
+            <summary>
+            Este método imprime un edificio.
+            </summary>
+        </member>
+        <member name="T:Full_GRASP_And_SOLID.Library.Supply">
+            <summary>
+            Clase que representa un producto.
+            </summary>
+        </member>
+        <member name="M:Full_GRASP_And_SOLID.Library.Supply.#ctor(System.String,System.Double)">
+            <summary>
+            El constructor de la clase.
+            </summary>
+            <param name="description"></param>
+            <param name="unitCost"></param>
+        </member>
+        <member name="P:Full_GRASP_And_SOLID.Library.Supply.Description">
+            <summary>
+            Descripción del producto.
+            </summary>
+        </member>
+        <member name="P:Full_GRASP_And_SOLID.Library.Supply.UnitCost">
+            <summary>
+            Costo unitario del producto.
+            </summary>
+        </member>
+        <member name="T:Full_GRASP_And_SOLID.Library.Task">
+            <summary>
+            Clase que representa una tarea.
+            </summary>
+        </member>
+        <member name="M:Full_GRASP_And_SOLID.Library.Task.#ctor(Full_GRASP_And_SOLID.Library.Supply,System.Double,Full_GRASP_And_SOLID.Library.Tool,System.Int32)">
+            <summary>
+            El constructor de la clase.
+            </summary>
+            <param name="material"></param>
+            <param name="quantity"></param>
+            <param name="equipment"></param>
+            <param name="time"></param>
+        </member>
+        <member name="P:Full_GRASP_And_SOLID.Library.Task.Material">
+            <summary>
+            Material de la tarea.
+            </summary>
+        </member>
+        <member name="P:Full_GRASP_And_SOLID.Library.Task.Quantity">
+            <summary>
+            Cantidad de material de la tarea.
+            </summary>
+        </member>
+        <member name="P:Full_GRASP_And_SOLID.Library.Task.Time">
+            <summary>
+            Tiempo de la tarea.
+            </summary>
+        </member>
+        <member name="P:Full_GRASP_And_SOLID.Library.Task.Equipment">
+            <summary>
+            Equipo de la tarea.
+            </summary>
+        </member>
+        <member name="T:Full_GRASP_And_SOLID.Library.Tool">
+            <summary>
+            Clase que representa un equipo.
+            </summary>
+        </member>
+        <member name="M:Full_GRASP_And_SOLID.Library.Tool.#ctor(System.String,System.Double)">
+            <summary>
+            El constructor de la clase.
+            </summary>
+        </member>
+        <member name="P:Full_GRASP_And_SOLID.Library.Tool.Description">
+            <summary>   
+            Descripción del equipo.
+            </summary>
+        </member>
+        <member name="P:Full_GRASP_And_SOLID.Library.Tool.HourlyCost">
+            <summary>
+            Costo por hora del equipo.
+            </summary>
+        </member>
+        <member name="T:System.EmptyTasksException">
+            <summary>
+            Clase que representa una excepción de tareas vacías.
+            </summary>
+        </member>
+        <member name="M:System.EmptyTasksException.#ctor(System.String)">
+            <summary>
+            Constructor de la clase EmptyTasksException.
+            </summary>
+        </member>
     </members>
 </doc>

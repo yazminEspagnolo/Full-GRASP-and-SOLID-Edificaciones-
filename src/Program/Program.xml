@@ -4,5 +4,16 @@
         <name>Program</name>
     </assembly>
     <members>
+        <member name="T:Full_GRASP_And_SOLID.Program">
+            <summary>
+            Programa principal.
+            </summary>
+        </member>
+        <member name="M:Full_GRASP_And_SOLID.Program.Main(System.String[])">
+            <summary>
+            Este método agrega un producto al catálogo.
+            </summary>
+            <param name="args"></param>
+        </member>
     </members>
 </doc>
