@@ -86,7 +86,7 @@ namespace Full_GRASP_And_SOLID
             return query.FirstOrDefault();
         }
 
-    
+    // Aqui...
         
     }
 }
