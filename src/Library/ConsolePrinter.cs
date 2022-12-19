@@ -6,16 +6,15 @@ namespace Full_GRASP_And_SOLID.Library
     /// <summary>
     /// Clase que representa la impresión en consola.
     /// </summary>
-
-    public class ConsolePrinter : IPrinter
+     public class ConsolePrinter : IPrinter
     {
         /// <summary>
         /// Este método imprime un edificio en consola.
         /// </summary>
-        /// <param name="building"></param>
-        public void PrintBuilding(Building building)
+        /// <param name="printable"></param>
+        public void PrintBuilding(IPrintable printable)
         {
-            Console.WriteLine(building.PrintBuilding());
+            Console.WriteLine(printable.GetTextToPrint());
         }
         
     }

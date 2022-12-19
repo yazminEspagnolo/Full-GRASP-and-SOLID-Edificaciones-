@@ -55,7 +55,7 @@
             Método que remueve una tarea de la lista de tareas.
             </summary>
         </member>
-        <member name="M:Full_GRASP_And_SOLID.Library.Building.PrintBuilding">
+        <member name="M:Full_GRASP_And_SOLID.Library.Building.GetTextToPrint">
             <summary>
             Método que da los pasos para imprimir un edificio.
             </summary>
@@ -70,20 +70,30 @@
             Clase que representa la impresión en consola.
             </summary>
         </member>
-        <member name="M:Full_GRASP_And_SOLID.Library.ConsolePrinter.PrintBuilding(Full_GRASP_And_SOLID.Library.Building)">
+        <member name="M:Full_GRASP_And_SOLID.Library.ConsolePrinter.PrintBuilding(Full_GRASP_And_SOLID.Library.IPrintable)">
             <summary>
             Este método imprime un edificio en consola.
             </summary>
-            <param name="building"></param>
+            <param name="printable"></param>
         </member>
         <member name="T:Full_GRASP_And_SOLID.Library.FilePrinter">
             <summary>
             Clase que representa la impresión en consola.
             </summary>
         </member>
-        <member name="M:Full_GRASP_And_SOLID.Library.FilePrinter.PrintBuilding(Full_GRASP_And_SOLID.Library.Building)">
+        <member name="M:Full_GRASP_And_SOLID.Library.FilePrinter.PrintBuilding(Full_GRASP_And_SOLID.Library.IPrintable)">
             <summary>
             Este método imprime un edificio en archivo.
+            </summary>
+        </member>
+        <member name="T:Full_GRASP_And_SOLID.Library.IPrintable">
+            <summary>
+            Esta interfaz se encarga de imprimir.
+            </summary>
+        </member>
+        <member name="M:Full_GRASP_And_SOLID.Library.IPrintable.GetTextToPrint">
+            <summary>
+            Este método imprime un edificio.
             </summary>
         </member>
         <member name="T:Full_GRASP_And_SOLID.Library.IPrinter">
@@ -91,7 +101,7 @@
             Esta interfaz se encarga de imprimir un edificio.
             </summary>
         </member>
-        <member name="M:Full_GRASP_And_SOLID.Library.IPrinter.PrintBuilding(Full_GRASP_And_SOLID.Library.Building)">
+        <member name="M:Full_GRASP_And_SOLID.Library.IPrinter.PrintBuilding(Full_GRASP_And_SOLID.Library.IPrintable)">
             <summary>
             Este método imprime un edificio.
             </summary>

@@ -2,7 +2,6 @@ using System;
 using System.Collections;
 using System.IO;
 
-
 namespace Full_GRASP_And_SOLID.Library
 {
     /// <summary>
@@ -13,9 +12,9 @@ namespace Full_GRASP_And_SOLID.Library
         /// <summary>
         /// Este método imprime un edificio en archivo.
         /// </summary>
-        public void PrintBuilding(Building building)
+        public void PrintBuilding(IPrintable printable)
         {
-            File.WriteAllText("Building.txt", building.PrintBuilding());
+            File.WriteAllText("Building.txt", printable.GetTextToPrint());
         }
     }
     // Se utiliza el patrón Polimorfismo para que la clase ConsolePrinter y FilePrinter implementen la interfaz IPrinter.

@@ -35,11 +35,11 @@ namespace Full_GRASP_And_SOLID.Library
         {
             if (destination == Destination.Console) // No se cumple el principio de responsabilidad única, ya que esta clase se encarga de imprimir en consola y en archivo.
             {
-                Console.WriteLine(building.PrintBuilding());
+                Console.WriteLine(building.GetTextToPrint());
             }
             else
             {
-                File.WriteAllText("Building.txt", building.PrintBuilding());
+                File.WriteAllText("Building.txt", building.GetTextToPrint());
             }
         }
 

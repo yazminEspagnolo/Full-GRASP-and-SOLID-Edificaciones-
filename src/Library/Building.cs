@@ -9,12 +9,14 @@ using System.Collections;
 using System.Collections.Generic;
 
 
+
+
 namespace Full_GRASP_And_SOLID.Library
 {
     /// <summary>
     /// Clase que representa un edificio.
     /// </summary>
-    public class Building
+    public class Building : IPrintable
     {
         private ArrayList tasks = new ArrayList();
 
@@ -53,7 +55,7 @@ namespace Full_GRASP_And_SOLID.Library
         /// <summary>
         /// Método que da los pasos para imprimir un edificio.
         /// </summary>
-        public string PrintBuilding()
+        public string GetTextToPrint()
         {
             List<string> Buildings = new List<string>();
             Buildings.Add($"Edificio {this.Description}:");

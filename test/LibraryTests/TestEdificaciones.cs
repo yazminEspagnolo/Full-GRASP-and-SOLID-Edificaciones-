@@ -56,13 +56,14 @@ namespace Tests
         public void ConsolePrinterTest()
         {
             PopulateCatalogs();
+            IPrintable building = new Building("torre");
             IPrinter consolePrinter = new ConsolePrinter();
             Building tower = new Building("Tower");
             tower.AddTask(GetProduct("Cemento"), 100, GetEquipment("Hormigonera"), 120);
             tower.AddTask(GetProduct("Arena"), 200, GetEquipment("Hormigonera"), 120);
             tower.AddTask(GetProduct("Tabla"), 50, GetEquipment("Martillo"), 15);
-            consolePrinter.PrintBuilding(tower);
-            string textoImpreso = tower.PrintBuilding();
+            consolePrinter.PrintBuilding(building);
+            string textoImpreso = tower.GetTextToPrint();
             Assert.AreEqual("Edificio Tower:\n"                                     +
                             "100 de 'Cemento' usando 'Hormigonera' durante 120\n"   +
                             "200 de 'Arena' usando 'Hormigonera' durante 120\n"     +
