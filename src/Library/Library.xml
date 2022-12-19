@@ -86,6 +86,16 @@
             Este método imprime un edificio en archivo.
             </summary>
         </member>
+        <member name="T:Full_GRASP_And_SOLID.Library.ICostable">
+            <summary>
+            Esta interfaz se encarga de imprimir.
+            </summary>
+        </member>
+        <member name="M:Full_GRASP_And_SOLID.Library.ICostable.GetProductionCost">
+            <summary>
+            Este método costea el valor del edificio.
+            </summary>
+        </member>
         <member name="T:Full_GRASP_And_SOLID.Library.IPrintable">
             <summary>
             Esta interfaz se encarga de imprimir.

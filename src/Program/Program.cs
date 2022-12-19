@@ -35,15 +35,18 @@ namespace Full_GRASP_And_SOLID
             tower.AddTask(GetProduct("Arena"), 200, GetEquipment("Hormigonera"), 120);
             tower.AddTask(GetProduct("Tabla"), 50, GetEquipment("Martillo"), 15);
             
-            //IPrintable building = new Building("torre");
+            IPrintable building = new Building("torre");
             IPrinter filePrinter = new FilePrinter();
             IPrinter consolePrinter = new ConsolePrinter();
             
             consolePrinter.PrintBuilding(tower);
             filePrinter.PrintBuilding(tower);
+           
+            /* ICostable costTower = tower as ICostable; // convierto el objeto tower a ICostable
+            costTower.GetProductionCost();  */
 
         }
-
+ 
         private static void PopulateCatalogs()
         {
             AddProductToCatalog("Cemento", 100);
@@ -86,7 +89,7 @@ namespace Full_GRASP_And_SOLID
             return query.FirstOrDefault();
         }
 
-    // Aqui...
+    
         
     }
 }
